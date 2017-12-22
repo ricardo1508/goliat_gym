@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,19 +12,19 @@
     <title>Goliat Gym</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../../resources/bootstrap_template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/bootstrap_template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../../resources/bootstrap_template/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="resources/bootstrap_template/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../../resources/bootstrap_template/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="resources/bootstrap_template/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="../../resources/bootstrap_template/vendor/morrisjs/morris.css" rel="stylesheet">
+    <link href="resources/bootstrap_template/vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../../resources/bootstrap_template/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="resources/bootstrap_template/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -199,38 +198,3 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Page title</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /#page-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../../resources/bootstrap_template/vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../../resources/bootstrap_template/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../../resources/bootstrap_template/vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="../../resources/bootstrap_template/vendor/raphael/raphael.min.js"></script>
-    <script src="../../resources/bootstrap_template/vendor/morrisjs/morris.min.js"></script>
-    <script src="../../resources/bootstrap_template/data/morris-data.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../../resources/bootstrap_template/dist/js/sb-admin-2.js"></script>
-
-</body>
-
-</html>
