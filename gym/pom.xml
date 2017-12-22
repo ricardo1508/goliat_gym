@@ -8,6 +8,7 @@
   <name>gym Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
+  
   <properties>
   	<spring.version>4.0.1.RELEASE</spring.version>
   </properties>
@@ -50,5 +51,7 @@
   <build>
     <finalName>gym</finalName>
   </build>
+  
+  
 
 </project>
