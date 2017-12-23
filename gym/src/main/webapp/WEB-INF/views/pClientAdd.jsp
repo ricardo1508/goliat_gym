@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <jsp:include page="main_template_top.jsp" />
 <div id="page-wrapper">
 	<div class="row">
@@ -15,22 +16,12 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-lg-6">
-							<form role="form">
+							<form:form method="post" action="clientAdd" modelAttribute="client">
 								<div class="form-group">
-									<label>Nombre:</label> <input class="form-control">
-								</div>
-								<div class="form-group">
-									<label>Apellido paterno:</label> <input class="form-control">
-								</div>
-								<div class="form-group">
-									<label>Apellido materno:</label> <input class="form-control">
-								</div>
-								<div class="form-group">
-									<label>Email:</label> <input class="form-control">
+									<form:label path="name">Nombre:</form:label><form:input path="name" class="form-control"/>
 								</div>
 								<button type="submit" class="btn btn-default">Agregar</button>
-								<button type="reset" class="btn btn-default">Restablecer</button>
-							</form>
+							</form:form>
 						</div>
 						<div class="col-lg-6">
 							
