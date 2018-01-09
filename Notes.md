@@ -7,3 +7,6 @@ In this file, I was able to change the following line
 back to
 <installed facet="jst.web" version="3.0"/>
 That seemed to fix the problem for me.
+
+Tomcat Server not starting with in 45 seconds
+http://www.tips.sentientmindz.com/2016/09/26/tomcat-server-not-starting-with-in-45-seconds/
