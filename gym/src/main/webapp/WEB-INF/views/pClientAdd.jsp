@@ -20,7 +20,29 @@
 								<div class="form-group">
 									<form:label path="name">Nombre:</form:label><form:input path="name" class="form-control"/>
 								</div>
-								<button type="submit" class="btn btn-default">Agregar</button>
+								<div class="form-group">
+									<form:label path="name">Apellido Paterno:</form:label><form:input path="name" class="form-control"/>
+								</div>
+								<div class="form-group">
+									<form:label path="name">Apellido Materno:</form:label><form:input path="name" class="form-control"/>
+								</div>
+								<div class="form-group">
+									<div class="form-group">
+										<label>Edad:</label> <select class="form-control">
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+										</select>
+									</div>
+								</div>
+								<label>Peso:</label>
+									<div class="form-group input-group">
+                                            <input type="text" class="form-control">
+                                            <span class="input-group-addon">kg</span>
+                                        </div>
+                                <button type="submit" class="btn btn-primary">Agregar</button>
 							</form:form>
 						</div>
 						<div class="col-lg-6">

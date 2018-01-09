@@ -24,4 +24,10 @@ public class GeneralRedirectController {
 		return mv;
 	}
 	
+	@RequestMapping("/pReportsMain")
+	public ModelAndView goToReportsMain() {
+		ModelAndView mv = new ModelAndView("pReportsMain");
+		mv.addObject("pageTitle","Reportes");
+		return mv;
+	}
 }

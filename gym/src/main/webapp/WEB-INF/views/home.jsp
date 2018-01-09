@@ -44,7 +44,7 @@
 						</div>
 					</div>
 				</div>
-				<a href="#">
+				<a href="pReportsMain">
 					<div class="panel-footer">
 						<span class="pull-left">Checar reportes</span> <span
 							class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -103,7 +103,7 @@
 		<div class="col-lg-8">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
+					<i class="fa fa-bar-chart-o fa-fw"></i> Ingresos por año
 					<div class="pull-right">
 						<div class="btn-group">
 							<button type="button"
