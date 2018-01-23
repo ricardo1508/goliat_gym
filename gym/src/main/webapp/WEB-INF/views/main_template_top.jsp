@@ -154,10 +154,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Inicio</a>
+                            <a href="home"><i class="fa fa-dashboard fa-fw"></i> Inicio</a>
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-user fa-fw"></i>Cliente nuevo</a>
+                            <a href="pClientAdd"><i class="fa fa-user fa-fw"></i>Cliente nuevo</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-edit fa-fw"></i>Checar reportes<span class="fa arrow"></span></a>
@@ -172,7 +172,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-users fa-fw"></i>Administrar clientes<span class="fa arrow"></span></a>
+                            <a href="pClientAdmin"><i class="fa fa-users fa-fw"></i>Administrar clientes<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#">Cliente nuevo</a>

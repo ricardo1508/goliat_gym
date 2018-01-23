@@ -1,7 +1,6 @@
 package com.goliat.gym.model;
 
-import java.io.Serializable;
-
+import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,76 +8,102 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="GymClient")
+@Table(name="client")
 public class Client {
 
 	@Id @GeneratedValue
 	@Column(name = "id_client")
+	private int cId;
 	
-	private int id;
+	@Column(name = "c_name")
+	private String cName;
 	
-	@Column(name = "client_name")
-	private String name;
+	@Column(name = "c_last_name")
+	private String cLastName;
 	
-	@Column(name = "f_last_name")
-	private String f_last_name;
+	@Column(name = "c_second_last_name")
+	private String cSecondLastName;
 	
-	@Column(name = "m_last_name")
-	private String m_last_name;
+	@Column(name = "c_age")
+	private int cAge;
 	
-	@Column(name = "age")
-	private int age;
+	@Column(name = "c_weight")
+	private float cWeight;
+
+	@Column(name = "c_goal")
+	private String cGoal;
 	
-	@Column(name = "weight")
-	private float weight;
-
-	public int getId() {
-		return id;
+	@Column(name = "c_starting_date")
+	private Date cStartingDate;
+	
+	public Client() {
+	//	this.cStartingDate = new Date(new java.util.Date());
+	}
+	
+	public int getcId() {
+		return cId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setcId(int cId) {
+		this.cId = cId;
 	}
 
-	public String getName() {
-		return name;
+	public String getcName() {
+		return cName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setcName(String cName) {
+		this.cName = cName;
 	}
 
-	public String getF_last_name() {
-		return f_last_name;
+	public String getcLastName() {
+		return cLastName;
 	}
 
-	public void setF_last_name(String f_last_name) {
-		this.f_last_name = f_last_name;
+	public void setcLastName(String cLastName) {
+		this.cLastName = cLastName;
 	}
 
-	public String getM_last_name() {
-		return m_last_name;
+	public String getcSecondLastName() {
+		return cSecondLastName;
 	}
 
-	public void setM_last_name(String m_last_name) {
-		this.m_last_name = m_last_name;
+	public void setcSecondLastName(String cSecondLastName) {
+		this.cSecondLastName = cSecondLastName;
 	}
 
-	public int getAge() {
-		return age;
+	public int getcAge() {
+		return cAge;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setcAge(int cAge) {
+		this.cAge = cAge;
 	}
 
-	public float getWeight() {
-		return weight;
+	public float getcWeight() {
+		return cWeight;
 	}
 
-	public void setWeight(float weight) {
-		this.weight = weight;
+	public void setcWeight(float cWeight) {
+		this.cWeight = cWeight;
 	}
+
+	public String getcGoal() {
+		return cGoal;
+	}
+
+	public void setcGoal(String cGoal) {
+		this.cGoal = cGoal;
+	}
+
+	public Date getcStartingDate() {
+		return cStartingDate;
+	}
+
+	public void setcStartingDate(Date cStartingDate) {
+		this.cStartingDate = cStartingDate;
+	}
+	
 	
 	// TODO : Complete
 	/*suffering longtext,

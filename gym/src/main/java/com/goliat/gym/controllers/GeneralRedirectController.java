@@ -30,4 +30,11 @@ public class GeneralRedirectController {
 		mv.addObject("pageTitle","Reportes");
 		return mv;
 	}
+	
+	@RequestMapping("/pClientAdmin")
+	public ModelAndView goToClientAdmin() {
+		ModelAndView mv = new ModelAndView("pClientAdmin");
+		mv.addObject("pageTitle","Administrador Clientes");
+		return mv;
+	}
 }

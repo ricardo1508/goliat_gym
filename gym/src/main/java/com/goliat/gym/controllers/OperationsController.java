@@ -25,26 +25,21 @@ public class OperationsController {
 	@RequestMapping(value = "/clientAdd", method = RequestMethod.POST)
 	public ModelAndView addClient(@ModelAttribute("client") Client client, BindingResult result, ModelMap model) {
 		ModelAndView mv = new ModelAndView("home");
-		/*SessionFactory factory = new Configuration().configure().addAnnotatedClass(Employee.class).buildSessionFactory();
+		SessionFactory factory = new Configuration().configure().addAnnotatedClass(Client.class).buildSessionFactory();
 		Session session = factory.openSession();
+		System.out.println("?=============== " + client.getcStartingDate());
 		Transaction tx = null;
-		Integer employeeID = null;
-
+		Integer clientId = null;
 		try {
 			tx = session.beginTransaction();
-			Employee employee = new Employee();
-			employee.setFirstName("Ricardo");
-			employee.setLastName("Sanches");
-			employee.setSalary(1000);
-			employeeID = (Integer) session.save(employee); 
+			clientId = (Integer) session.save(client); 
 			tx.commit();
 		} catch (HibernateException e) {
 			if (tx!=null) tx.rollback();
 			e.printStackTrace(); 
 		} finally {
 			session.close(); 
-		}*/
-		System.out.println("===== " + client.getName());
+		}
 		return mv;
 	}
 

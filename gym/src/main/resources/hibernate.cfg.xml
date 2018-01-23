@@ -9,7 +9,7 @@
 
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 
-		<property name="hibernate.connection.url">jdbc:mysql://localhost/test_hibernate</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/goliat_gym</property>
 
 		<property name="hibernate.connection.username">root</property>
 
