@@ -1,43 +1,17 @@
 package com.goliat.gym.model;
 
-import java.sql.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="client")
 public class Client {
 
-	@Id @GeneratedValue
-	@Column(name = "id_client")
-	private int cId;
-	
-	@Column(name = "c_name")
+	private int cId;	
 	private String cName;
-	
-	@Column(name = "c_last_name")
 	private String cLastName;
-	
-	@Column(name = "c_second_last_name")
 	private String cSecondLastName;
-	
-	@Column(name = "c_age")
 	private int cAge;
-	
-	@Column(name = "c_weight")
 	private float cWeight;
-
-	@Column(name = "c_goal")
 	private String cGoal;
-	
-	@Column(name = "c_starting_date")
-	private Date cStartingDate;
+	private String cStartingDate;
 	
 	public Client() {
-	//	this.cStartingDate = new Date(new java.util.Date());
 	}
 	
 	public int getcId() {
@@ -96,21 +70,19 @@ public class Client {
 		this.cGoal = cGoal;
 	}
 
-	public Date getcStartingDate() {
+	public String getcStartingDate() {
 		return cStartingDate;
 	}
 
-	public void setcStartingDate(Date cStartingDate) {
+	public void setcStartingDate(String cStartingDate) {
 		this.cStartingDate = cStartingDate;
 	}
-	
-	
-	// TODO : Complete
-	/*suffering longtext,
-    email varchar(255),    
-    phone_number int(20),    
-    start_training date not null,
-    */ 
-	
+
+	@Override
+	public String toString() {
+		return "Client [cId=" + cId + ", cName=" + cName + ", cLastName=" + cLastName + ", cSecondLastName="
+				+ cSecondLastName + ", cAge=" + cAge + ", cWeight=" + cWeight + ", cGoal=" + cGoal + ", cStartingDate="
+				+ cStartingDate + "]";
+	}
 	
 }

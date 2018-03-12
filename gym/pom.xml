@@ -14,6 +14,7 @@
 		<hibernate.version>4.3.6.Final</hibernate.version>
 		<mysql.connector.version>5.0.4</mysql.connector.version>
 		<joda-time.version>2.3</joda-time.version>
+		<log4j.version>1.2.17</log4j.version>
 	</properties>
 
 	<dependencies>
@@ -23,7 +24,7 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -74,21 +75,28 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+
 		<!-- Joda-Time -->
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>${joda-time.version}</version>
-        </dependency>
- 
-        <!-- To map JodaTime with database type -->
-        <dependency>
-            <groupId>org.jadira.usertype</groupId>
-            <artifactId>usertype.core</artifactId>
-            <version>3.0.0.CR1</version>
-        </dependency>
-        
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>${joda-time.version}</version>
+		</dependency>
+
+		<!-- To map JodaTime with database type -->
+		<dependency>
+			<groupId>org.jadira.usertype</groupId>
+			<artifactId>usertype.core</artifactId>
+			<version>3.0.0.CR1</version>
+		</dependency>
+
+		<!-- Log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

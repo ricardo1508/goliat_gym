@@ -33,16 +33,16 @@ pageEncoding="ISO-8859-1"%>
                         <h3 class="panel-title">Iniciar Sesión</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" action="home" method="post">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Usuario" name="user" type="text" autofocus>
+                                    <input class="form-control" placeholder="Usuario" name="userName" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Constraseña" name="password" type="password" value="">
+                                    <input class="form-control" placeholder="Constraseña" name="userPass" type="password" value="">
                                 </div>                                
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="home" class="btn btn-lg btn-success btn-block">Iniciar Sesión</a>
+                                <button type="submit" class="btn btn-lg btn-success btn-block">Iniciar Sesión</button>
                             </fieldset>
                         </form>
                     </div>
