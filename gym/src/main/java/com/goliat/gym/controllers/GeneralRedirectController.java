@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.goliat.gym.model.Client;
+import com.goliat.gym.model.Payment;
 import com.goliat.gym.utiliy.Gym;
 
 @Controller

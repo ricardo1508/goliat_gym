@@ -16,8 +16,7 @@
 				<div class="panel-heading">Nuevo</div>
 				<div class="panel-body">
 					<div class="row">
-						<form:form method="post" action="clientAdd"
-							modelAttribute="client">
+						<form:form method="post" action="clientAdd" modelAttribute="client">
 							<div class="col-lg-6">
 								<div class="form-group">
 									<form:label path="cName">Nombre:</form:label>
@@ -96,20 +95,19 @@
 										</div>
 										<div class="form-row">
 											<div class="form-group col-md-9">
-												<label id="lmonthCost">Otro pago (Descripción):</label> <input
-													type="text" class="form-control" id="anotherPayment"
-													value="" />
+												<label id="lmonthCost">Otro pago (Descripción):</label> 
+												<input type="text" class="form-control" id="anotherPayment" value="" />
 											</div>
 											<div class="form-group col-md-3">
-												<label id="lotherPayment">Total:</label> <input type="text"
-													class="form-control allownumericwithdecimal"
-													id="otherPayment" value="" />
+												<label id="lotherPayment">Total:</label> <input type="text" class="form-control allownumericwithdecimal" id="otherPayment" value="" />
 											</div>
 										</div>
 									</div>
 									<div class="panel-footer">
 										<label class="col-md-9" id="lTOTAL">TOTAL:</label> 
-										<label class="col-md-3" id="totalPayment">$ ${month_cost}</label> <br />
+										<form:label path="payment.pAmount" class="col-md-3" id="totalPayment">$ ${month_cost}</form:label> <br />
+										<form:input type="hidden" path="payment.pAmount" id="itotalPayment" value="${month_cost}"/>
+										<form:input type="hidden" path="payment.pDescription" id="pDescription" value="Costo Mensualidad $ ${month_cost} x1 = $ ${month_cost}. TOTAL =  $ ${month_cost}"/>
 									</div>
 								</div>
 							</div>
@@ -144,7 +142,18 @@ $(document).ready(function(){
 	
 	function paymentAmountChanged(){
 		$("#totalMonthCost").val("$" + getMonthTotal().toFixed(2));
+		$("#itotalPayment").val("$" + getTotalPayment().toFixed(2));		
 		$("#totalPayment").text("$" + getTotalPayment().toFixed(2));
+		var pDescription = "Costo Mensualidad $"+ parseFloat($("#monthCost").val()).toFixed(2) 
+			+" "
+			+$("#totalMonths").val()
+			+"="+$("#totalMonthCost").val()
+			+". ";
+		if($("#otherPayment").val() != ""){
+			pDescription +="Otro pago:" + $("#anotherPayment").val() +" = $"+parseFloat($("#otherPayment").val()).toFixed(2) + ". ";
+		}
+		pDescription += "TOTAL: "+ $("#itotalPayment").val();
+		$("#pDescription").val(pDescription);
 	}
 	
 	function getMonthTotal() {

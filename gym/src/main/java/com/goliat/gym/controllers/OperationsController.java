@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.goliat.gym.model.Client;
 import com.goliat.gym.model.Payment;
+import com.goliat.gym.utiliy.Gym;
 
 @Controller
 public class OperationsController {
@@ -30,6 +31,7 @@ public class OperationsController {
 		LOGGER.info("Method addClient - IN");
 		LOGGER.info("Adding client : " + client);
 		ModelAndView mv = new ModelAndView("home");
+		Gym.addClient(client);
 		// TODO : Add validations to add client		
 		// adding the client
 		/*SessionFactory factory = new Configuration()

@@ -10,8 +10,10 @@ public class Client {
 	private float cWeight;
 	private String cGoal;
 	private String cStartingDate;
+	private Payment payment;
 	
 	public Client() {
+		this.payment = new Payment();
 	}
 	
 	public int getcId() {
@@ -77,12 +79,20 @@ public class Client {
 	public void setcStartingDate(String cStartingDate) {
 		this.cStartingDate = cStartingDate;
 	}
+	
+	public Payment getPayment() {
+		return payment;
+	}
+
+	public void setPayment(Payment payment) {
+		this.payment = payment;
+	}
 
 	@Override
 	public String toString() {
 		return "Client [cId=" + cId + ", cName=" + cName + ", cLastName=" + cLastName + ", cSecondLastName="
 				+ cSecondLastName + ", cAge=" + cAge + ", cWeight=" + cWeight + ", cGoal=" + cGoal + ", cStartingDate="
-				+ cStartingDate + "]";
+				+ cStartingDate + ", payment=" + payment + "]";
 	}
-	
+
 }
