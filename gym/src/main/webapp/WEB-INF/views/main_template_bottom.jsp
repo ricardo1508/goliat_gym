@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
  </div>
-    <!-- /#wrapper -->
+ <!-- /#wrapper -->
 
     <!-- jQuery -->
     <script src="resources/bootstrap_template/vendor/jquery/jquery.min.js"></script>
@@ -17,9 +17,9 @@
     <script src="resources/bootstrap_template/data/morris-data.js"></script>
 
 	<!-- DataTables JavaScript -->
-    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script src="resources/bootstrap_template/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="resources/bootstrap_template/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="resources/bootstrap_template/vendor/datatables-responsive/dataTables.responsive.js"></script>
 	
     <!-- Custom Theme JavaScript -->
     <script src="resources/bootstrap_template/dist/js/sb-admin-2.js"></script>

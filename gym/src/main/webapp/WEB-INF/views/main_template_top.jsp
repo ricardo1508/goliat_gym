@@ -152,7 +152,7 @@
                             <a href="#"><i class="fa fa-edit fa-fw"></i>Checar reportes<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.html">Ingresos semanales</a>
+                                    <a href="pClients">Clientes</a>
                                 </li>
                                 <li>
                                     <a href="buttons.html">Ingresos mensuales</a>

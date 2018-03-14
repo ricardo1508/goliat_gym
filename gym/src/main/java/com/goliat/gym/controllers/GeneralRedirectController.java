@@ -1,5 +1,7 @@
 package com.goliat.gym.controllers;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -46,10 +48,24 @@ public class GeneralRedirectController {
 		return mv;
 	}
 	
-	@RequestMapping("/pClientAdmin")
-	public ModelAndView goToClientAdmin() {
+	@RequestMapping(value = "/pClientAdmin",params= {"id"})
+	public ModelAndView goToClientAdmin(@RequestParam(value = "id") String id) {
 		ModelAndView mv = new ModelAndView("pClientAdmin");
-		mv.addObject("pageTitle","Administrador Clientes");
+		// get Client
+		Client client = Gym.getClientByID(id);
+		mv.addObject("client",client);
+		mv.addObject("pageTitle",client.getcName() + " " + client.getcLastName() + " " + client.getcSecondLastName());
+		return mv;
+	}
+	
+	@RequestMapping("/pClients")
+	public ModelAndView goToClients() {
+		ModelAndView mv = new ModelAndView("pClients");
+		mv.addObject("pageTitle","Clientes");
+		// Getting all clients information
+		List<Client> clients = Gym.getAllClients();
+		System.out.println("========= + " + clients.size());
+		mv.addObject("clients", clients);
 		return mv;
 	}
 }
