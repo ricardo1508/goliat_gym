@@ -10,12 +10,13 @@ public class Client {
 	private float cWeight;
 	private String cGoal;
 	private String cStartingDate;
+	private String cRoutine;
 	private Payment payment;
-	
+
 	public Client() {
 		this.payment = new Payment();
 	}
-	
+
 	public int getcId() {
 		return cId;
 	}
@@ -79,7 +80,15 @@ public class Client {
 	public void setcStartingDate(String cStartingDate) {
 		this.cStartingDate = cStartingDate;
 	}
-	
+
+	public String getcRoutine() {
+		return cRoutine;
+	}
+
+	public void setcRoutine(String cRoutine) {
+		this.cRoutine = cRoutine;
+	}
+
 	public Payment getPayment() {
 		return payment;
 	}
@@ -92,7 +101,7 @@ public class Client {
 	public String toString() {
 		return "Client [cId=" + cId + ", cName=" + cName + ", cLastName=" + cLastName + ", cSecondLastName="
 				+ cSecondLastName + ", cAge=" + cAge + ", cWeight=" + cWeight + ", cGoal=" + cGoal + ", cStartingDate="
-				+ cStartingDate + ", payment=" + payment + "]";
+				+ cStartingDate + ", cRoutine=" + cRoutine + ", payment=" + payment + "]";
 	}
 
 }

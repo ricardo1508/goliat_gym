@@ -55,6 +55,7 @@ public class GeneralRedirectController {
 		Client client = Gym.getClientByID(id);
 		mv.addObject("client",client);
 		mv.addObject("pageTitle",client.getcName() + " " + client.getcLastName() + " " + client.getcSecondLastName());
+		mv.addObject("month_cost",Gym.getMonthCost());
 		return mv;
 	}
 	

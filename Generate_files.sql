@@ -10,6 +10,7 @@ CREATE TABLE client (
     c_age int(10),
     c_weight float(10),
 	c_goal varchar(400),
+	c_routine varchar(1500),
     c_starting_date date not null
 );
 	

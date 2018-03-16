@@ -32,6 +32,9 @@
         });
     });
     </script>
+    
+    <script src="resources/scripts/main_template_clientAddUpdate.js"></script>
+    
 </body>
 
 </html>
