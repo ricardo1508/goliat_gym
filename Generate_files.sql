@@ -35,7 +35,6 @@ CREATE TABLE client_visit(
 	id_visit int primary key auto_increment,
 	id_client int(4),
 	cv_date date not null,
-	cv_number int,
 	foreign key (id_client) references client(id_client)
 );
 

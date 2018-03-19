@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,17 +19,31 @@ import com.goliat.gym.utiliy.Gym;
 public class GeneralRedirectController {
 
 	@RequestMapping(value = "/home", method = RequestMethod.POST)
-	public ModelAndView goToHome(@RequestParam("userName") String userName,
-			@RequestParam("userPass") String userPass) {
+	public ModelAndView goToHome(@RequestParam("userName") String userName, @RequestParam("userPass") String userPass) {
 		boolean validSession = Gym.validateAdminUser(userName, userPass);
 		ModelAndView mv = new ModelAndView("home");
 		mv.addObject("pageTitle","Goliat Gym - Administración");
-		
 		if(validSession == false) {
 			mv = new ModelAndView("index");
 			mv.addObject("error","Usuario invalido");
 		}
-
+		return mv;
+	}
+	
+	@RequestMapping("/pClientLogin")
+	public ModelAndView goToClientLogin() {
+		ModelAndView mv = new ModelAndView("pClientLogin");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/clienVisit",params= {"userId"})
+	public ModelAndView clientVisit(@RequestParam("userId") String userId) {
+		boolean validClient = Gym.clientVisit(userId);
+		ModelAndView mv = new ModelAndView("pClientLogin");
+		if(validClient == false) {
+			mv = new ModelAndView("pClientLogin");
+			mv.addObject("error","Id de cliente invalido");
+		}
 		return mv;
 	}
 	
@@ -54,7 +69,7 @@ public class GeneralRedirectController {
 		// get Client
 		Client client = Gym.getClientByID(id);
 		mv.addObject("client",client);
-		mv.addObject("pageTitle",client.getcName() + " " + client.getcLastName() + " " + client.getcSecondLastName());
+		mv.addObject("pageTitle",client.getcName() + " " + client.getcLastName() + " " + client.getcSecondLastName() + " - ID: " + client.getcId());
 		mv.addObject("month_cost",Gym.getMonthCost());
 		return mv;
 	}

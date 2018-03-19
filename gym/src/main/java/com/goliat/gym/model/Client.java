@@ -18,10 +18,13 @@ public class Client {
 	private int cPaidMonths;
 	private Payment payment;
 	private List<Payment> payments;
+	private List<Visit> visits;
+	private int totalVisits;
 	
 	public Client() {
 		this.payment = new Payment();
 		this.payments = new ArrayList<Payment>();
+		this.visits = new ArrayList<Visit>();
 	}
 
 	public int getcId() {
@@ -128,12 +131,30 @@ public class Client {
 		this.payments = payments;
 	}
 
+	
+	public List<Visit> getVisits() {
+		return visits;
+	}
+
+	public void setVisits(List<Visit> visits) {
+		this.visits = visits;
+	}
+
+	public int getTotalVisits() {
+		return totalVisits;
+	}
+
+	public void setTotalVisits(int totalVisits) {
+		this.totalVisits = totalVisits;
+	}
+
 	@Override
 	public String toString() {
 		return "Client [cId=" + cId + ", cName=" + cName + ", cLastName=" + cLastName + ", cSecondLastName="
 				+ cSecondLastName + ", cAge=" + cAge + ", cWeight=" + cWeight + ", cGoal=" + cGoal + ", cStartingDate="
 				+ cStartingDate + ", cRoutine=" + cRoutine + ", cNextPaymentDate=" + cNextPaymentDate + ", cPaidMonths="
-				+ cPaidMonths + ", payment=" + payment + ", payments=" + payments + "]";
+				+ cPaidMonths + ", payment=" + payment + ", payments=" + payments + ", visits=" + visits
+				+ ", totalVisits=" + totalVisits + "]";
 	}
-	
+
 }
