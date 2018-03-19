@@ -65,7 +65,6 @@ public class GeneralRedirectController {
 		mv.addObject("pageTitle","Clientes");
 		// Getting all clients information
 		List<Client> clients = Gym.getAllClients();
-		System.out.println("========= + " + clients.size());
 		mv.addObject("clients", clients);
 		return mv;
 	}

@@ -26,5 +26,25 @@ public class OperationsController {
 		LOGGER.info("Method addClient - OUT");
 		return mv;
 	}
+	
+	@RequestMapping(value = "/clientUpdateInfo", method = RequestMethod.POST)
+	public ModelAndView updateInfoClient(@ModelAttribute("client") Client client, BindingResult result, ModelMap model) {
+		LOGGER.info("Method updateInfoClient - IN");
+		LOGGER.info("Updating client : " + client);
+		ModelAndView mv = new ModelAndView("home");
+		Gym.updateInfoClient(client);
+		LOGGER.info("Method updateInfoClient - OUT");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/clientMakePayment", method = RequestMethod.POST)
+	public ModelAndView makePaymentClient(@ModelAttribute("client") Client client, BindingResult result, ModelMap model) {
+		LOGGER.info("Method makePaymentClient - IN");
+		LOGGER.info("Updating client : " + client);
+		ModelAndView mv = new ModelAndView("home");
+		Gym.makePaymentClient(client);
+		LOGGER.info("Method makePaymentClient - OUT");
+		return mv;
+	}
 
 }

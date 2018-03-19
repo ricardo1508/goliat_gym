@@ -1,5 +1,8 @@
 package com.goliat.gym.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Client {
 
 	private int cId;	
@@ -11,10 +14,14 @@ public class Client {
 	private String cGoal;
 	private String cStartingDate;
 	private String cRoutine;
+	private String cNextPaymentDate;
+	private int cPaidMonths;
 	private Payment payment;
-
+	private List<Payment> payments;
+	
 	public Client() {
 		this.payment = new Payment();
+		this.payments = new ArrayList<Payment>();
 	}
 
 	public int getcId() {
@@ -96,12 +103,37 @@ public class Client {
 	public void setPayment(Payment payment) {
 		this.payment = payment;
 	}
+	
+	public String getcNextPaymentDate() {
+		return cNextPaymentDate;
+	}
+
+	public void setcNextPaymentDate(String cNextPaymentDate) {
+		this.cNextPaymentDate = cNextPaymentDate;
+	}
+
+	public int getcPaidMonths() {
+		return cPaidMonths;
+	}
+
+	public void setcPaidMonths(int cPaidMonths) {
+		this.cPaidMonths = cPaidMonths;
+	}
+	
+	public List<Payment> getPayments() {
+		return payments;
+	}
+
+	public void setPayments(List<Payment> payments) {
+		this.payments = payments;
+	}
 
 	@Override
 	public String toString() {
 		return "Client [cId=" + cId + ", cName=" + cName + ", cLastName=" + cLastName + ", cSecondLastName="
 				+ cSecondLastName + ", cAge=" + cAge + ", cWeight=" + cWeight + ", cGoal=" + cGoal + ", cStartingDate="
-				+ cStartingDate + ", cRoutine=" + cRoutine + ", payment=" + payment + "]";
+				+ cStartingDate + ", cRoutine=" + cRoutine + ", cNextPaymentDate=" + cNextPaymentDate + ", cPaidMonths="
+				+ cPaidMonths + ", payment=" + payment + ", payments=" + payments + "]";
 	}
-
+	
 }
