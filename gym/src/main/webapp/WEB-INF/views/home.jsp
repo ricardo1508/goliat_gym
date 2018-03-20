@@ -43,7 +43,7 @@
 						</div>
 					</div>
 				</div>
-				<a href="pReportsMain">
+				<a href="pReportMonthlyPayments">
 					<div class="panel-footer">
 						<span class="pull-left">Checar reportes</span> <span
 							class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

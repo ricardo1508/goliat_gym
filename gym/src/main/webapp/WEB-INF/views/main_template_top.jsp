@@ -58,7 +58,9 @@
 						<li><a href="#"><i class="fa fa-edit fa-fw"></i>Reportes<span
 								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="buttons.html">Ingresos mensuales</a></li>
+								<li><a href="pReportMonthlyPayments">Ingresos mensuales</a></li>
+								<li><a href="pReportTodayPayments">Ingresos del día</a></li>
+								<li><a href="pReportTodayVisits">Visitas del día</a></li>
 							</ul>
 						</li>
 						<li><a href="pClients"><i class="fa fa-users fa-fw"></i>Clientes</a></li>
