@@ -132,5 +132,33 @@ public class GeneralRedirectController {
 		mv.addObject("clients", clients);
 		return mv;
 	}
+		
+	@RequestMapping(value = "/pReportTodayPayments")
+	public ModelAndView pReportTodayPayments(@CookieValue("validSession") String validSession) {
+		System.out.println("Method pReportTodayPayments - IN");
+		if(Gym.validateSession(validSession) == false) {
+			ModelAndView mv = new ModelAndView("index");
+			return mv;
+		}
+		ModelAndView mv = new ModelAndView("pReportTodayPayments");
+		mv.addObject("pageTitle","Ingresos del día");
+		mv.addObject("todayPayments",Gym.getTodayPayments());
+		System.out.println("Method pReportTodayPayments - OUT");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/pReportTodayVisits")
+	public ModelAndView pReportTodayVisits(@CookieValue("validSession") String validSession) {
+		System.out.println("Method pReportTodayVisits - IN");
+		if(Gym.validateSession(validSession) == false) {
+			ModelAndView mv = new ModelAndView("index");
+			return mv;
+		}
+		ModelAndView mv = new ModelAndView("pReportTodayVisits");
+		mv.addObject("lastVisits",Gym.getTodayVisits());
+		mv.addObject("pageTitle","Visitas del día");
+		System.out.println("Method pReportTodayVisits - OUT");
+		return mv;
+	}
 	
 }
