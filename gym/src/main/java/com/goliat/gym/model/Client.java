@@ -6,6 +6,7 @@ import java.util.List;
 public class Client {
 
 	private int cId;	
+	private String cIdLogin;
 	private String cName;
 	private String cLastName;
 	private String cSecondLastName;
@@ -147,14 +148,22 @@ public class Client {
 	public void setTotalVisits(int totalVisits) {
 		this.totalVisits = totalVisits;
 	}
+	
+	public String getcIdLogin() {
+		return cIdLogin;
+	}
+
+	public void setcIdLogin(String cIdLogin) {
+		this.cIdLogin = cIdLogin;
+	}
 
 	@Override
 	public String toString() {
-		return "Client [cId=" + cId + ", cName=" + cName + ", cLastName=" + cLastName + ", cSecondLastName="
-				+ cSecondLastName + ", cAge=" + cAge + ", cWeight=" + cWeight + ", cGoal=" + cGoal + ", cStartingDate="
-				+ cStartingDate + ", cRoutine=" + cRoutine + ", cNextPaymentDate=" + cNextPaymentDate + ", cPaidMonths="
-				+ cPaidMonths + ", payment=" + payment + ", payments=" + payments + ", visits=" + visits
-				+ ", totalVisits=" + totalVisits + "]";
+		return "Client [cId=" + cId + ", cIdLogin=" + cIdLogin + ", cName=" + cName + ", cLastName=" + cLastName
+				+ ", cSecondLastName=" + cSecondLastName + ", cAge=" + cAge + ", cWeight=" + cWeight + ", cGoal="
+				+ cGoal + ", cStartingDate=" + cStartingDate + ", cRoutine=" + cRoutine + ", cNextPaymentDate="
+				+ cNextPaymentDate + ", cPaidMonths=" + cPaidMonths + ", payment=" + payment + ", payments=" + payments
+				+ ", visits=" + visits + ", totalVisits=" + totalVisits + "]";
 	}
 
 }

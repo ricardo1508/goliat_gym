@@ -15,11 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.goliat.gym.model.Client;
+import com.goliat.gym.model.GymUtil;
+import com.goliat.gym.model.Product;
 import com.goliat.gym.utiliy.Gym;
 
 @Controller
 public class GeneralRedirectController {
-	
+
 	@RequestMapping(value = "/home")
 	public ModelAndView goToHome(@CookieValue("validSession") String validSession) {
 		if(Gym.validateSession(validSession) == false) {
@@ -31,7 +33,7 @@ public class GeneralRedirectController {
 		mv.addObject("lastVisits",Gym.getLastVisits());
 		return mv;
 	} // end goToHome
-	
+
 	@RequestMapping(value = "/logout")
 	public ModelAndView goToIndex(HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView("index");
@@ -39,7 +41,7 @@ public class GeneralRedirectController {
 		response.addCookie(login);
 		return mv;
 	} // end goToHome
-	
+
 	@RequestMapping(value = "/pConfig")
 	public ModelAndView goToConfig(@CookieValue("validSession") String validSession) {
 		if(Gym.validateSession(validSession) == false) {
@@ -51,7 +53,7 @@ public class GeneralRedirectController {
 		mv.addObject("gymConfig",Gym.getGymInformation());
 		return mv;
 	} // end goToHome
-	
+
 	@RequestMapping(value = "/home", method = RequestMethod.POST)
 	public ModelAndView goToHome(@RequestParam("userName") String userName, @RequestParam("userPass") String userPass, HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView("home");
@@ -70,7 +72,7 @@ public class GeneralRedirectController {
 		}		
 		return mv;
 	} // end goToHome
-	
+
 	@RequestMapping("/pClientLogin")
 	public ModelAndView goToClientLogin() {
 		ModelAndView mv = new ModelAndView("pClientLogin");
@@ -90,7 +92,7 @@ public class GeneralRedirectController {
 		}
 		return mv;
 	}
-	
+
 	@RequestMapping("/pClientAdd")
 	public ModelAndView goToClientAdd(@CookieValue("validSession") String validSession) {
 		if(Gym.validateSession(validSession) == false) {
@@ -103,7 +105,19 @@ public class GeneralRedirectController {
 		mv.addObject("month_cost",Gym.getGymInformation().getGymMonthCost());
 		return mv;
 	}
-		
+
+	@RequestMapping("/pProductAdd")
+	public ModelAndView goToProductAdd(@CookieValue("validSession") String validSession) {
+		if(Gym.validateSession(validSession) == false) {
+			ModelAndView mv = new ModelAndView("index");
+			return mv;
+		}
+		ModelAndView mv = new ModelAndView("pProductAdd");
+		mv.addObject("pageTitle","Agregar Producto");
+		mv.addObject("product",new Product());
+		return mv;
+	}
+
 	@RequestMapping(value = "/pClientAdmin",params= {"id"})
 	public ModelAndView goToClientAdmin(@RequestParam(value = "id") String id,@CookieValue("validSession") String validSession) {
 		if(Gym.validateSession(validSession) == false) {
@@ -114,11 +128,25 @@ public class GeneralRedirectController {
 		// get Client
 		Client client = Gym.getClientByID(id);
 		mv.addObject("client",client);
-		mv.addObject("pageTitle",client.getcName() + " " + client.getcLastName() + " " + client.getcSecondLastName() + " - ID: " + client.getcId());
+		mv.addObject("pageTitle",client.getcName() + " " + client.getcLastName() + " " + client.getcSecondLastName() + " - ID: " + client.getcIdLogin());
 		mv.addObject("month_cost",Gym.getGymInformation().getGymMonthCost());
 		return mv;
 	}
-	
+
+	@RequestMapping(value = "/pProductAdmin",params= {"id"})
+	public ModelAndView goToProductAdmin(@RequestParam(value = "id") String id,@CookieValue("validSession") String validSession) {
+		if(Gym.validateSession(validSession) == false) {
+			ModelAndView mv = new ModelAndView("index");
+			return mv;
+		}
+		ModelAndView mv = new ModelAndView("pProductAdmin");
+		// get Client
+		Product product = Gym.getProductByID(id);
+		mv.addObject("product",product);
+		mv.addObject("pageTitle",product.getpName());
+		return mv;
+	}
+
 	@RequestMapping("/pClients")
 	public ModelAndView goToClients(@CookieValue("validSession") String validSession) {
 		if(Gym.validateSession(validSession) == false) {
@@ -132,7 +160,21 @@ public class GeneralRedirectController {
 		mv.addObject("clients", clients);
 		return mv;
 	}
-		
+
+	@RequestMapping("/pProducts")
+	public ModelAndView goToProducts(@CookieValue("validSession") String validSession) {
+		if(Gym.validateSession(validSession) == false) {
+			ModelAndView mv = new ModelAndView("index");
+			return mv;
+		}
+		ModelAndView mv = new ModelAndView("pProducts");
+		mv.addObject("pageTitle","Productos");
+		// Getting all products information
+		List<Product> products = Gym.getAllProducts();
+		mv.addObject("products", products);
+		return mv;
+	}
+
 	@RequestMapping(value = "/pReportTodayPayments")
 	public ModelAndView pReportTodayPayments(@CookieValue("validSession") String validSession) {
 		System.out.println("Method pReportTodayPayments - IN");
@@ -146,7 +188,7 @@ public class GeneralRedirectController {
 		System.out.println("Method pReportTodayPayments - OUT");
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/pReportTodayVisits")
 	public ModelAndView pReportTodayVisits(@CookieValue("validSession") String validSession) {
 		System.out.println("Method pReportTodayVisits - IN");
@@ -160,5 +202,22 @@ public class GeneralRedirectController {
 		System.out.println("Method pReportTodayVisits - OUT");
 		return mv;
 	}
-	
+
+	@RequestMapping(value = "/pProductSell")
+	public ModelAndView pProductSell(@CookieValue("validSession") String validSession) {
+		System.out.println("Method pProductSell - IN");
+		if(Gym.validateSession(validSession) == false) {
+			ModelAndView mv = new ModelAndView("index");
+			return mv;
+		}
+		ModelAndView mv = new ModelAndView("pProductSell");
+		// Getting all products information
+		List<Product> products = Gym.getAllProducts();
+		mv.addObject("products", products);
+		mv.addObject("util",new GymUtil());
+		mv.addObject("pageTitle","Venta de productos");
+		System.out.println("Method pProductSell - OUT");
+		return mv;
+	}
+
 }

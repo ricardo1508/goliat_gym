@@ -55,14 +55,20 @@
 					<ul class="nav" id="side-menu">
 						<li><a href="home"><i class="fa fa-dashboard fa-fw"></i>Inicio</a></li>
 						<li><a href="pClientAdd"><i class="fa fa-user fa-fw"></i>Cliente nuevo</a></li>
-						<li><a href="#"><i class="fa fa-edit fa-fw"></i>Reportes<span
-								class="fa arrow"></span></a>
+						<li><a href="#"><i class="fa fa-edit fa-fw"></i>Reportes<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="pReportTodayPayments">Ingresos del día</a></li>
 								<li><a href="pReportTodayVisits">Visitas del día</a></li>
 							</ul>
 						</li>
 						<li><a href="pClients"><i class="fa fa-users fa-fw"></i>Clientes</a></li>
+						<li><a href="#"><i class="fa fa-check-square-o fa-fw"></i>Inventario<span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="pProducts">Productos</a></li>
+								<li><a href="pProductAdd">Agregar Producto</a></li>
+								<li><a href="pProductSell">Venta</a></li>
+							</ul>
+						</li>
 						<li><a href="pConfig"><i class="fa fa-gears fa-fw"></i>Configuración</a></li>
 						<li><div class="alert alert-info"><a href="pGenerateBackup"><i class="fa fa-save fa-fw"></i>Finalizar día</a></div></li>
 					</ul>
